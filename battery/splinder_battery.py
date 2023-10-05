@@ -9,6 +9,7 @@ def SplinderBattery(Battery):
     def needs_service(self):
         service_due_date = self.last_service_date + self.need_service_year
         if(self.current_date > service_due_date):
+            self.last_service_date = service_due_date
             return True
         else:
             return False
